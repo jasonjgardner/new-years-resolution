@@ -1,0 +1,117 @@
+:root {
+  --font-family-title: 'Poiret One', system-ui, sans-serif;
+  --font-family-button: 'DM Serif Text', system-ui, cursive;
+  --font-family-body: 'DM Serif Text', serif;
+  --color-background: #111;
+  --color-on-background: #fefefe;
+  --color-accent: gold;
+  --btn-height: 2.5em;
+}
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 auto;
+}
+
+.sidebar {
+  order: 1;
+  padding: 0.5em;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+.main {
+  border: 0.5em solid var(--color-background);
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
+  max-width: 100%;
+  overflow: hidden;
+  transition: border-width 0.25s ease-out;
+  width: 640px;
+}
+
+.btn {
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: var(--color-accent);
+  cursor: pointer;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  font-family: var(--font-family-button, system-ui);
+  font-weight: 600;
+  justify-content: space-around;
+  max-width: 100%;
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  transition: background-color ease-in-out, color 0.5s ease-out, height 0.5s ease-in-out, width 0.5s ease-in-out;
+  user-select: none;
+  white-space: nowrap;
+
+  &[disabled] {
+    color: var(--color-on-background);
+    cursor: default;
+    text-transform: none;
+  }
+}
+
+.bg {
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+}
+
+.color-accent {
+  color: var(--color-accent);
+}
+
+.lead {
+  font-family: var(--font-family-title);
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s ease-in;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave {
+  opacity: 1;
+}
+
+html,
+body {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+  background-color: var(--color-background, white);
+  color: var(--color-on-background, #111);
+  font: 18px/1.5 var(--font-family-body, system-ui);
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-title);
+}
